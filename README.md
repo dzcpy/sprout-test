@@ -5,7 +5,6 @@
 ![](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![](https://img.shields.io/badge/Typescript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![](https://badges.aleen42.com/src/vitejs.svg)
-![](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![GitHub action badge](https://github.com/dzcpy/sprout-test/actions/workflows/build.yml/badge.svg)
 
 </div>
@@ -19,7 +18,6 @@
 - [Installation <a name="installation"></a>](#installation-)
   - [Procedures <a name="procedures"></a>](#procedures-)
 - [Screenshots <a name="screenshots"></a>](#screenshots-)
-  - [New Tab <a name="newtab"></a>](#new-tab-)
   - [Popup <a name="popup"></a>](#popup-)
 - [Documents <a name="documents"></a>](#documents-)
 
@@ -66,10 +64,6 @@ This is the test project for Sprout.
 6. If you want to build in production, Just run `yarn build` or `npm run build`.
 
 ## Screenshots <a name="screenshots"></a>
-
-### New Tab <a name="newtab"></a>
-
-<img width="971" src="https://user-images.githubusercontent.com/53500778/162631646-cd40976b-b737-43d0-8e6a-6ac090a2e2d4.png">
 
 ### Popup <a name="popup"></a>
 
