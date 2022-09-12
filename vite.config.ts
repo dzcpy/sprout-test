@@ -31,6 +31,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         website: resolve(pagesDir, 'content', 'panels', 'website', 'index.tsx'),
+        text: resolve(pagesDir, 'content', 'panels', 'text', 'index.tsx'),
+        image: resolve(pagesDir, 'content', 'panels', 'image', 'index.tsx'),
         iframe: resolve(pagesDir, 'content', 'index.html'),
         content: resolve(pagesDir, 'content', 'index.ts'),
         background: resolve(pagesDir, 'background', 'index.ts'),

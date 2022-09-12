@@ -14,7 +14,7 @@ const resizeObserver = new ResizeObserver(([entry]) => {
     parent.postMessage(
       {
         type: 'resize',
-        data: { iframeHeight: blockSize, iframeWidth: inlineSize },
+        data: { height: blockSize, width: inlineSize },
       },
       '*'
     );

@@ -21,9 +21,24 @@ Object.assign(iframe.style, {
   visibility: 'hidden',
   opacity: 0,
   overflow: 'visible',
-  transition: 'opacity 0.2s ease-in-out',
+  transform: 'translateY(-100%)',
+  transition: 'opacity 0.2s ease-in-out, transform 0.2s ease-in-out',
 });
 document.body.append(iframe);
+
+const showIframe = () => {
+  iframe.style.visibility = 'visible';
+  iframe.style.opacity = '1';
+  iframe.style.transform = 'translateY(0)';
+};
+
+const hideIframe = () => {
+  iframe.style.opacity = '0';
+  iframe.style.transform = 'translateY(-100%)';
+  setTimeout(() => {
+    iframe.style.visibility = 'hidden';
+  }, 200);
+};
 
 const setPanel = (panel?) => {
   const src = !panel ? undefined : iframeURL + '?panel=' + panel;
@@ -35,14 +50,11 @@ const setPanel = (panel?) => {
 window.addEventListener('message', ({ data: message }) => {
   switch (message.type) {
     case 'resize':
-      iframe.style.height = message.data.iframeHeight + 'px';
-      iframe.style.width = message.data.iframeWidth + 'px';
+      iframe.style.height = message.data.height + 'px';
+      iframe.style.width = message.data.width + 'px';
       break;
     case 'close':
-      iframe.style.opacity = '0';
-      setTimeout(() => {
-        iframe.style.visibility = 'hidden';
-      }, 200);
+      hideIframe();
       break;
   }
 });
@@ -50,8 +62,7 @@ window.addEventListener('message', ({ data: message }) => {
 chrome.runtime.onMessage.addListener((message) => {
   // chrome.runtime.onMessage.removeListener(event);
   if (message.type === 'popup_click') {
-    iframe.style.visibility = 'visible';
-    iframe.style.opacity = '1';
+    showIframe();
     setPanel('website');
   }
 });
