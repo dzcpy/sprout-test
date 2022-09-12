@@ -27,7 +27,8 @@ This is the test project for Sprout.
 
 ### Key challenges and highlights
 
-- Production quality and well structured / well thought code
+- Production quality code
+- Use best practices whenever is possible, detailed oriented
 - Faster build time and smaller bundle size by using `vite` and `rollup`. Is it a pun? :)
 - Pixel perfect style as per Figma design (at least trying to be)
 - The content panel is written in an `iframe`, to avoid CSS pollution from both sides
