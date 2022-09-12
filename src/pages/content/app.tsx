@@ -27,9 +27,9 @@ const App = () => {
     case 'website':
       return <WebsitePanel />;
     case 'text':
-      return <div>text</div>;
+      return <TextPanel />;
     case 'image':
-      return <div>image</div>;
+      return <ImagePanel />;
     default:
       return null;
   }
