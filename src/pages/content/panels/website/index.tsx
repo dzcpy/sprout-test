@@ -1,13 +1,14 @@
-import { useState } from 'react';
 import { debounce } from 'lodash-es';
+import { useState } from 'react';
 
 import { ReactComponent as IconLock } from '@assets/img/lock.svg';
 import { ReactComponent as IconWeb } from '@assets/img/web.svg';
-import OptionButton from '@pages/content/components/option-button';
-import type { ChangeEvent } from 'react';
 import { WAIT_TIME_BEFORE_CLOSING_PANEL } from '@src/constants';
+import OptionButtons from '@src/pages/content/components/option-buttons';
 
 import styles from './index.module.scss';
+
+import type { ChangeEvent } from 'react';
 
 const closeIframe = () => {
   parent.postMessage({ type: 'close' }, '*');
@@ -50,7 +51,7 @@ export default function App() {
         }
       ></textarea>
       <div className="flex gap-4">
-        <OptionButton
+        <OptionButtons
           options={{
             world: {
               label: 'World',

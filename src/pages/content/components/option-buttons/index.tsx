@@ -12,7 +12,7 @@ export type OptionButtonPropsType<T> = {
   onChange?: (value: keyof T) => void;
 };
 
-const OptionButton = <T extends OptionButtonPropsOptionsType>({
+const OptionButtons = <T extends OptionButtonPropsOptionsType>({
   value,
   defaultValue,
   options,
@@ -46,4 +46,4 @@ const OptionButton = <T extends OptionButtonPropsOptionsType>({
   );
 };
 
-export default OptionButton;
+export default OptionButtons;
