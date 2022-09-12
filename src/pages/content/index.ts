@@ -22,7 +22,7 @@ Object.assign(iframe.style, {
   opacity: 0,
   overflow: 'visible',
   transform: 'translateY(-100%)',
-  transition: 'opacity 0.2s ease-in-out, transform 0.2s ease-in-out',
+  transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
 });
 document.body.append(iframe);
 
@@ -37,7 +37,7 @@ const hideIframe = () => {
   iframe.style.transform = 'translateY(-100%)';
   setTimeout(() => {
     iframe.style.visibility = 'hidden';
-  }, 200);
+  }, 500);
 };
 
 const setPanel = (panel?) => {
