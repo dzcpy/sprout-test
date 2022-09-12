@@ -67,7 +67,7 @@ This is the test project for Sprout.
 
 ### Popup <a name="popup"></a>
 
-<img width="305" src="https://user-images.githubusercontent.com/53500778/162631660-d35c5f12-e0d7-4431-a020-97024cdda7a7.png">
+![screenshot](https://user-images.githubusercontent.com/203980/189662099-71d1a443-4259-454f-b017-cdf21ba61d57.gif)
 
 ## Documents <a name="documents"></a>
 
