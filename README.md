@@ -19,7 +19,7 @@
   - [Procedures <a name="procedures"></a>](#procedures-)
 - [Screenshots <a name="screenshots"></a>](#screenshots-)
   - [Popup <a name="popup"></a>](#popup-)
-- [Documents <a name="documents"></a>](#documents-)
+- [Documentation <a name="documentation"></a>](#documentation-)
 
 ## Intro <a name="intro"></a>
 
@@ -70,7 +70,7 @@ This is the test project for Sprout.
 
 ![screenshot](https://user-images.githubusercontent.com/203980/189662099-71d1a443-4259-454f-b017-cdf21ba61d57.gif)
 
-## Documents <a name="documents"></a>
+## Documentation <a name="documentation"></a>
 
 - [Vite Plugin](https://vitejs.dev/guide/api-plugin.html)
 - [ChromeExtension](https://developer.chrome.com/docs/extensions/mv3/)
