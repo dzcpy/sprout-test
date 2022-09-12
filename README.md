@@ -14,7 +14,7 @@
 - [Table of Contents](#table-of-contents)
 - [Intro <a name="intro"></a>](#intro-)
   - [Key challenges and highlights](#key-challenges-and-highlights)
-- [Tools <a name="tools"></a>](#tools-)
+- [Toolchain <a name="toolchain"></a>](#toolchain-)
 - [Installation <a name="installation"></a>](#installation-)
   - [Procedures <a name="procedures"></a>](#procedures-)
 - [Screenshots <a name="screenshots"></a>](#screenshots-)
@@ -27,15 +27,15 @@ This is the test project for Sprout.
 
 ### Key challenges and highlights
 
-- Production quality code
+- Well structured and reusable code
 - Uses best practices whenever is possible, detail oriented
-- Faster build time and smaller bundle size by using `vite` and `rollup`. Is it a pun? :)
-- Pixel perfect style as per Figma design (at least trying to be)
+- Faster build time and smaller bundle size (compares to Webpack), made possible with `vite` and `rollup`. Is it a pun? :)
+- Pixel perfect style as per Figma design
 - The content panel is written in an `iframe`, to avoid CSS pollution from both sides
-- Flexible `iframe` height, which is done by `window.postMessage`
-- Developed with ❤
+- Flexible `iframe` height, which is done by observing the inner content box's height and then send to parent frame with `window.postMessage`
+- Coded with ❤
 
-## Tools <a name="tools"></a>
+## Toolchain <a name="toolchain"></a>
 
 - [React 18](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
