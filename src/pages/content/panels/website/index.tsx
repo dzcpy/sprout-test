@@ -18,7 +18,7 @@ const onHoverClose = debounce(() => {
 }, WAIT_TIME_BEFORE_CLOSING_PANEL);
 
 export default function App() {
-  const [scope, setScope] = useState<string>('world');
+  const [scope, setScope] = useState<'world' | 'self'>('world');
   const [note, setNote] = useState('');
 
   return (

@@ -5,21 +5,21 @@ export type OptionButtonPropsOptionsType = {
   [key: string]: { label: string; icon: JSX.Element };
 };
 
-export type OptionButtonPropsType = {
-  value?: string;
-  defaultValue?: string;
-  options: OptionButtonPropsOptionsType;
-  onChange?: (value: string) => void;
+export type OptionButtonPropsType<T> = {
+  value?: keyof T;
+  defaultValue?: keyof T;
+  options: T;
+  onChange?: (value: keyof T) => void;
 };
 
-const OptionButton = ({
+const OptionButton = <T extends OptionButtonPropsOptionsType>({
   value,
   defaultValue,
   options,
   onChange,
-}: OptionButtonPropsType) => {
+}: OptionButtonPropsType<T>) => {
   const [selected, setSelected] = useState<string>(
-    value ?? defaultValue ?? Object.keys(options)[0]
+    (value ?? defaultValue ?? Object.keys(options)[0]) as string | undefined
   );
   return (
     <div className="flex gap-1 p-1 rounded-lg bg-gray-bg">
