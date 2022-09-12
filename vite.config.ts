@@ -1,64 +1,55 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import path, { resolve } from "path";
-import makeManifest from "./utils/plugins/make-manifest";
-import customDynamicImport from "./utils/plugins/custom-dynamic-import";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import svgr from 'vite-plugin-svgr';
+import { resolve, parse, basename } from 'path';
+import makeManifest from './utils/plugins/make-manifest';
+import customDynamicImport from './utils/plugins/custom-dynamic-import';
 
-const root = resolve(__dirname, "src");
-const pagesDir = resolve(root, "pages");
-const assetsDir = resolve(root, "assets");
-const outDir = resolve(__dirname, "dist");
-const publicDir = resolve(__dirname, "public");
+const root = resolve(__dirname, 'src');
+const pagesDir = resolve(root, 'pages');
+const constantsDir = resolve(root, 'constants');
+const assetsDir = resolve(root, 'assets');
+const outDir = resolve(__dirname, 'dist');
+const publicDir = resolve(__dirname, 'public');
 
-const isDev = process.env.__DEV__ === "true";
+const isDev = process.env.__DEV__ === 'true';
 
 export default defineConfig({
   resolve: {
     alias: {
-      "@src": root,
-      "@assets": assetsDir,
-      "@pages": pagesDir,
+      '@src': root,
+      '@assets': assetsDir,
+      '@pages': pagesDir,
+      '@constants': constantsDir,
     },
   },
-  plugins: [react(), makeManifest(), customDynamicImport()],
+  plugins: [react(), svgr(), makeManifest(), customDynamicImport()],
   publicDir,
   build: {
     outDir,
     sourcemap: isDev,
     rollupOptions: {
       input: {
-        devtools: resolve(pagesDir, "devtools", "index.html"),
-        panel: resolve(pagesDir, "panel", "index.html"),
-        content: resolve(pagesDir, "content", "index.ts"),
-        background: resolve(pagesDir, "background", "index.ts"),
-        contentStyle: resolve(pagesDir, "content", "style.scss"),
-        popup: resolve(pagesDir, "popup", "index.html"),
-        newtab: resolve(pagesDir, "newtab", "index.html"),
-        options: resolve(pagesDir, "options", "index.html"),
+        website: resolve(pagesDir, 'content', 'panels', 'website', 'index.tsx'),
+        iframe: resolve(pagesDir, 'content', 'index.html'),
+        content: resolve(pagesDir, 'content', 'index.ts'),
+        background: resolve(pagesDir, 'background', 'index.ts'),
       },
       output: {
-        entryFileNames: "src/pages/[name]/index.js",
+        entryFileNames: ({ facadeModuleId }) => {
+          let { type } =
+            facadeModuleId.match(/\/src\/(?<type>.*?)\//).groups ?? {};
+          type ??= 'pages';
+          return `src/${type}/[name]/index.js`;
+        },
         chunkFileNames: isDev
-          ? "assets/js/[name].js"
-          : "assets/js/[name].[hash].js",
-        assetFileNames: (assetInfo) => {
-          const { dir, name: _name } = path.parse(assetInfo.name);
-          const assetFolder = getLastElement(dir.split("/"));
-          const name = assetFolder + firstUpperCase(_name);
-          return `assets/[ext]/${name}.chunk.[ext]`;
+          ? 'assets/js/[name].js'
+          : 'assets/js/[name].[hash].js',
+        assetFileNames: ({ name: path }) => {
+          const { dir, name } = parse(path);
+          return `assets/[ext]/${basename(dir)}-${name}.chunk.[ext]`;
         },
       },
     },
   },
 });
-
-function getLastElement<T>(array: ArrayLike<T>): T {
-  const length = array.length;
-  const lastIndex = length - 1;
-  return array[lastIndex];
-}
-
-function firstUpperCase(str: string) {
-  const firstAlphabet = new RegExp(/( |^)[a-z]/, "g");
-  return str.toLowerCase().replace(firstAlphabet, (L) => L.toUpperCase());
-}

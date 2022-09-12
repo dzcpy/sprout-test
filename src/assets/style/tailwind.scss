@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  ::placeholder {
+    @apply font-medium text-gray-text;
+  }
+  button {
+    @apply font-medium;
+  }
+  textarea {
+    @apply bg-gray-bg py-2 px-3 rounded-lg w-full resize-none font-medium;
+  }
+}

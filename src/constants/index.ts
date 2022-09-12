@@ -1,0 +1,1 @@
+export const WAIT_TIME_BEFORE_CLOSING_PANEL = 4500;
