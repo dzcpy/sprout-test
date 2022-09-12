@@ -14,7 +14,7 @@
 
 - [Table of Contents](#table-of-contents)
 - [Intro <a name="intro"></a>](#intro-)
-  - [Key challenges and solutions](#key-challenges-and-solutions)
+  - [Key challenges and highlights](#key-challenges-and-highlights)
 - [Features <a name="features"></a>](#features-)
 - [Installation <a name="installation"></a>](#installation-)
   - [Procedures <a name="procedures"></a>](#procedures-)
@@ -27,7 +27,7 @@
 
 This is the test project for Sprout.
 
-### Key challenges and solutions
+### Key challenges and highlights
 
 - Production quality and well structured code
 - Faster build time and smaller bundle size by using `vite` and `rollup`. Is it a pun? :)
