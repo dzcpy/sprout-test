@@ -14,7 +14,7 @@
 - [Table of Contents](#table-of-contents)
 - [Intro <a name="intro"></a>](#intro-)
   - [Key challenges and highlights](#key-challenges-and-highlights)
-- [Features <a name="features"></a>](#features-)
+- [Tools <a name="tools"></a>](#tools-)
 - [Installation <a name="installation"></a>](#installation-)
   - [Procedures <a name="procedures"></a>](#procedures-)
 - [Screenshots <a name="screenshots"></a>](#screenshots-)
@@ -35,7 +35,7 @@ This is the test project for Sprout.
 - Flexible `iframe` height, which is done by `window.postMessage`
 - Developed with ❤
 
-## Features <a name="features"></a>
+## Tools <a name="tools"></a>
 
 - [React 18](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
