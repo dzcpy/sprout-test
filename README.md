@@ -5,6 +5,7 @@
 ![](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![](https://img.shields.io/badge/Typescript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![](https://badges.aleen42.com/src/vitejs.svg)
+![](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![GitHub action badge](https://github.com/dzcpy/sprout-test/actions/workflows/build.yml/badge.svg)
 
 </div>
@@ -13,6 +14,7 @@
 
 - [Table of Contents](#table-of-contents)
 - [Intro <a name="intro"></a>](#intro-)
+  - [Key challenges and solutions](#key-challenges-and-solutions)
 - [Features <a name="features"></a>](#features-)
 - [Installation <a name="installation"></a>](#installation-)
   - [Procedures <a name="procedures"></a>](#procedures-)
@@ -23,9 +25,16 @@
 
 ## Intro <a name="intro"></a>
 
-This boilerplate is made for creating chrome extensions using React and Typescript.
+This is the test project for Sprout.
 
-> The focus was on improving the build speed and development experience with Vite.
+### Key challenges and solutions
+
+- Production quality and well structured code
+- Faster build time and smaller bundle size by using `vite` and `rollup`. Is it a pun? :)
+- Pixel perfect style as per Figma design (at least trying to be)
+- The content panel is written in an `iframe`, to avoid CSS pollution from both sides
+- Flexible `iframe` height, which is done by `window.postMessage`
+- Developed with ❤
 
 ## Features <a name="features"></a>
 
